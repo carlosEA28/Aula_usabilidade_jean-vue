@@ -1,7 +1,6 @@
 <script>
 import services from "@/services";
 import CardTime from "@/components/CardTime.vue";
-// import CardTime from "@/components/CardTime.vue";
 
 export default {
   name: "HomePage",
@@ -31,7 +30,7 @@ export default {
   <h1>Brasileirasso Oficial</h1>
   {{ times }}
 
-  <CardTime :time="times[0]" />
+  <CardTime v-for="time in times" v-bind:key="time.id" :time="time" />
 </template>
 
 <style></style>
